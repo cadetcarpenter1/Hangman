@@ -5,7 +5,7 @@
 
 	<form method="post" action="guess">
    <center><%=message%></center> 
-	<center><h3><input type="text" name="letter">
+<center><input type= "text" name="letter" required=true onkeyup="this.value = this.value.replace(/[^a-zA-Z]/, '')" maxlength="1" autofocus="true">
 	<input type= "hidden" name="player1" value='<%=p1_name%>'>
 	<input type= "hidden" name="player2" value='<%=p2_name%>'>
 	<input type="submit" name="Enter Guess"/></h3></center>
