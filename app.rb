@@ -17,7 +17,7 @@ end
 get '/password' do
 	player1 = params[:player1]
 	player2 = params[:player2]
-	erb :password, locals: {p1_name: player1, p2_name: player2}
+	erb :password,layout: :password , locals: {p1_name: player1, p2_name: player2}
 
 end	
 
@@ -49,7 +49,8 @@ post '/guess' do
 
         				redirect "/loser?player1="+player1+'player2' + player2
 					 elsif
-					 	session[:game].winner == true
+					 	session[:game].winner 
+					 	
 					 	redirect "/winner?player1="+player1+'player2'+ player2
 					end
 
